@@ -16,8 +16,8 @@ services:
     restart: always
     ports:
       - 8080:8080
-  nodejs:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    image: result/latest
+  # nodejs:
+  #   build:
+  #     context: ./
+  #     dockerfile: Dockerfile
+  #   image: result/latest
