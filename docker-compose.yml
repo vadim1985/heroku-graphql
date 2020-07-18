@@ -6,18 +6,12 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: 123
-    volumes:
-      - ./db:/var/lib/postgresql/data
-      - ./postgresql.conf:/etc/postgresql/postgresql.conf
+      POSTGRES_DB: otus-node
     ports:
-      - 5432:5432
-  adminer:
-    image: adminer
-    restart: always
+      - 5433:5432
+  node_proj_docker:
+    build: .
     ports:
-      - 8080:8080
-  # nodejs:
-  #   build:
-  #     context: ./
-  #     dockerfile: Dockerfile
-  #   image: result/latest
+      - "3000:3000"
+    environment:
+      DB_HOST: host.docker.internal

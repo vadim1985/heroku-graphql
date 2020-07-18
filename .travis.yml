@@ -6,7 +6,7 @@ services:
 before_install:
   - docker-compose build
   - docker-compose up -d
-  - docker build .
-  - docker build -t node_proj_docker .
-  - docker run -d -p 3000:3000 node_proj_docker:latest .
-  - docker ps -a
+  # - docker build .
+  # - docker build -t node_proj_docker .
+  # - docker run -d -p 3000:3000 node_proj_docker:latest .
+  # - docker ps -a
