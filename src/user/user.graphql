@@ -1,0 +1,41 @@
+type Query {
+  me: User
+  users: [User]!
+  user(id: ID!): User
+}
+
+type Mutation {
+  login(username: String): String
+
+  createUser(
+    name: String,
+    age: Int,
+    password: String
+  ): User
+
+  updateUser(
+    id: ID!,
+    name: String,
+    age: Int,
+    password: String
+  ): User
+
+  removeUser(
+    id: ID!
+  ): RemoteUserId
+}
+
+type User {
+  id: ID!
+  name: String
+  age: Int
+  password: String
+  navigations: [Navigation]!
+}
+
+type RemoteUserId {
+  id: ID!
+}
+
+
+

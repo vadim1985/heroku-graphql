@@ -1,0 +1,41 @@
+type Query {
+  navigations: [Navigation]
+  navigation(id: ID!): Navigation
+}
+
+type Mutation {
+  createNavigation(
+    name: String,
+    url: String,
+    icon: String,
+    users: [UserId],
+  ): Navigation
+
+  updateNavigation(
+    id: ID!,
+    name: String,
+    url: String,
+    icon: String,
+    users: [UserId],
+  ): Navigation
+
+  removeNavigation(
+    id: ID!
+  ): RemoteNavigationId
+}
+
+type Navigation {
+  id: ID!
+  name: String
+  url: String
+  icon: String
+  users: [User]!
+}
+
+type RemoteNavigationId {
+  id: ID!
+}
+
+input UserId {
+  id: ID!
+}
