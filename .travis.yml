@@ -23,5 +23,3 @@ deploy:
   provider: heroku
   api_key: 80c72ceb-c0c5-467c-82f0-7a6f1640df22
   app: otus-graphql
-  on:
-    branch: develop
